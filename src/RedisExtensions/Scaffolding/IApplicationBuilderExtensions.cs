@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using RedisExtensions.Abstractions;
 using RedisExtensions.Attributes;
 using StackExchange.Redis;
-using System;
 using System.Linq;
 using System.Reflection;
 
@@ -28,9 +27,10 @@ namespace RedisExtensions.Scaffolding
 
                 var ctor = processor.GetConstructors().First();
                 var parameters = ctor.GetParameters()
-                    .Select(param => scope.ServiceProvider.GetRequiredService(param.ParameterType));
+                    .Select(param => scope.ServiceProvider.GetRequiredService(param.ParameterType))
+                    .ToArray();
 
-                var instance = ctor.Invoke(parameters.ToArray());
+                var instance = ctor.Invoke(parameters);
 
                 switch (instance)
                 {
@@ -41,6 +41,8 @@ namespace RedisExtensions.Scaffolding
                     case IAsyncProcessor ap:
                         sub.Subscribe(attribute.QueueName).OnMessage(ap.OnMessageAsync);
                         break;
+
+                    // TODO: Throw exception if it does not implement either interface
                 }
             }
         }
