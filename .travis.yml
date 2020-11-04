@@ -8,10 +8,11 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 before_deploy:
+  - dotnet build -c Release
   - dotnet pack -c Release
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push ./src/MessageQueueExtensions/bin/Release/MessageQueueExtensions.*.nupkg  -k $NUGET_API -s https://api.nuget.org/v3/index.json
+  script: dotnet nuget push ./src/MessageQueueExtensions/bin/Release/MessageQueueExtensions.*.nupkg -k $NUGET_API -s https://api.nuget.org/v3/index.json
   on:
     branch: master
