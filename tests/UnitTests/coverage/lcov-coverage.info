@@ -1,0 +1,55 @@
+SF:/Users/mrnkr/Documents/code/RedisExtensions/src/MessageQueueExtensions/Scaffolding/IApplicationBuilderExtensions.cs
+FN:12,System.Void MessageQueueExtensions.Scaffolding.IApplicationBuilderExtensions::UseProcessors(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+FNDA:3,System.Void MessageQueueExtensions.Scaffolding.IApplicationBuilderExtensions::UseProcessors(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+DA:13,3
+DA:14,3
+DA:15,3
+DA:17,2
+DA:18,2
+DA:19,2
+DA:20,18
+DA:22,18
+DA:23,6
+DA:24,6
+DA:25,6
+DA:27,6
+DA:30,2
+DA:31,2
+DA:33,2
+DA:34,2
+DA:36,6
+DA:37,2
+BRDA:22,188,1,6
+BRDA:27,124,0,4
+BRDA:27,124,1,2
+BRDA:27,137,1,2
+BRDA:27,137,0,6
+BRDA:22,188,0,2
+BRDA:20,6,0,16
+BRDA:20,14,0,16
+BRDA:20,6,1,0
+BRDA:20,14,1,0
+LF:18
+LH:18
+BRF:10
+BRH:8
+FNF:1
+FNH:1
+end_of_record
+SF:/Users/mrnkr/Documents/code/RedisExtensions/src/MessageQueueExtensions/Attributes/ProcessorAttribute.cs
+FN:6,System.String MessageQueueExtensions.Attributes.ProcessorAttribute::get_QueueName()
+FNDA:4,System.String MessageQueueExtensions.Attributes.ProcessorAttribute::get_QueueName()
+DA:7,4
+FN:8,System.Void MessageQueueExtensions.Attributes.ProcessorAttribute::.ctor(System.String)
+FNDA:12,System.Void MessageQueueExtensions.Attributes.ProcessorAttribute::.ctor(System.String)
+DA:9,12
+DA:10,12
+DA:11,12
+DA:12,12
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record

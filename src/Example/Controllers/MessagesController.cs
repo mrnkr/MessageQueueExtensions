@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using RedisExtensions.Example.Dtos;
+using MessageQueueExtensions.Example.Dtos;
 using StackExchange.Redis;
 
-namespace RedisExtensions.Example.Controllers
+namespace MessageQueueExtensions.Example.Controllers
 {
     [ApiController]
     [Route("[controller]")]

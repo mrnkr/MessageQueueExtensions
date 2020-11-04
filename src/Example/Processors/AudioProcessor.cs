@@ -1,16 +1,15 @@
-using RedisExtensions.Abstractions;
-using RedisExtensions.Attributes;
-using StackExchange.Redis;
+using MessageQueueExtensions.Abstractions;
+using MessageQueueExtensions.Attributes;
 using System;
 
-namespace RedisExtensions.Example.Processors
+namespace MessageQueueExtensions.Example.Processors
 {
     [Processor("audio")]
     public sealed class AudioProcessor : IProcessor
     {
-        public void OnMessage(ChannelMessage channelMessage)
+        public void OnMessage(object message)
         {
-            Console.WriteLine($"Non-async >> {(string) channelMessage.Message}");
+            Console.WriteLine($"Non-async >> {message}");
         }
     }
 }

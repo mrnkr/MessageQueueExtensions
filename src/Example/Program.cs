@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace RedisExtensions.Example
+namespace MessageQueueExtensions.Example
 {
     public class Program
     {

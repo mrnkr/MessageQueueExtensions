@@ -1,4 +1,4 @@
-namespace RedisExtensions.Example.Dtos
+namespace MessageQueueExtensions.Example.Dtos
 {
     public sealed class MessageDto
     {

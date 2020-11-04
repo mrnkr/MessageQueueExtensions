@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RedisExtensions.Scaffolding;
+using MessageQueueExtensions.Abstractions;
+using MessageQueueExtensions.Scaffolding;
 using StackExchange.Redis;
 
-namespace RedisExtensions.Example
+namespace MessageQueueExtensions.Example
 {
     public class Startup
     {
@@ -27,6 +28,7 @@ namespace RedisExtensions.Example
                 var redis = ConnectionMultiplexer.Connect(Configuration.GetSection("Redis:Host").Value);
                 return redis.GetSubscriber();
             });
+            services.AddSingleton<IMessageQueue, RedisAdapter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +42,7 @@ namespace RedisExtensions.Example
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
-            app.UseRedisProcessors();
+            app.UseProcessors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

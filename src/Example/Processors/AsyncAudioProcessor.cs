@@ -1,18 +1,17 @@
-using RedisExtensions.Abstractions;
-using RedisExtensions.Attributes;
-using StackExchange.Redis;
+using MessageQueueExtensions.Abstractions;
+using MessageQueueExtensions.Attributes;
 using System;
 using System.Threading.Tasks;
 
-namespace RedisExtensions.Example.Processors
+namespace MessageQueueExtensions.Example.Processors
 {
     [Processor("audio")]
     public sealed class AsyncAudioProcessor : IAsyncProcessor
     {
-        public async Task OnMessageAsync(ChannelMessage channelMessage)
+        public async Task OnMessageAsync(object message)
         {
             await Task.Delay(1000);
-            Console.WriteLine($"Async >> {(string) channelMessage.Message}");
+            Console.WriteLine($"Async >> {message}");
         }
     }
 }

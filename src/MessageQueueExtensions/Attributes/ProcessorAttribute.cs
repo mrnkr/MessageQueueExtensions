@@ -1,6 +1,6 @@
 using System;
 
-namespace RedisExtensions.Attributes
+namespace MessageQueueExtensions.Attributes
 {
     public class ProcessorAttribute : Attribute
     {
