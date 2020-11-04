@@ -7,3 +7,11 @@ script:
   - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/lcov-coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+before_deploy:
+  - dotnet pack -c Release
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: dotnet nuget push ./src/MessageQueueExtensions/bin/Release/MessageQueueExtensions.*.nupkg  -k $NUGET_API -s https://api.nuget.org/v3/index.json
+  on:
+    branch: master

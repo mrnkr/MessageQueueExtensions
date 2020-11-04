@@ -1,8 +1,15 @@
 # MessageQueueExtensions
 
+[![NuGet version][nuget-image]][nuget-url]
+[![Downloads][downloads-image]][nuget-url]
 [![Build Status](https://travis-ci.com/mrnkr/MessageQueueExtensions.svg?branch=master)](https://travis-ci.com/mrnkr/MessageQueueExtensions)
 [![codecov](https://codecov.io/gh/mrnkr/MessageQueueExtensions/branch/master/graph/badge.svg)](https://codecov.io/gh/mrnkr/MessageQueueExtensions)
-[![license](https://img.shields.io/github/license/mrnkr/MessageQueueExtensions)](https://github.com/mrnkr/MessageQueueExtensions/blob/master/LICENSE)
+[![license][license]](https://github.com/mrnkr/MessageQueueExtensions/blob/master/LICENSE)
+
+[nuget-image]:https://img.shields.io/nuget/v/MessageQueueExtensions
+[nuget-url]:https://www.nuget.org/packages/MessageQueueExtensions
+[downloads-image]:https://img.shields.io/nuget/dt/MessageQueueExtensions
+[license]:https://img.shields.io/github/license/mrnkr/MessageQueueExtensions
 
 The boilerplate you always want but never take the time to write for when you want your API to also have some Redis stuff going on in the background.
 
